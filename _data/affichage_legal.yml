@@ -1,0 +1,48 @@
+# =====================================================================
+#  AFFICHAGE LÉGAL
+#  Le document le plus récent se place TOUT EN HAUT de la liste « documents ».
+#
+#  Ajouter un document :
+#    1. Déposer le fichier PDF dans le dossier  documents/affichage-legal/
+#       Nom conseillé : AAAA-MM-JJ-sujet-court.pdf  (sans accents ni espaces)
+#       (ou ajouter son adresse dans outils/fichiers-a-recuperer.txt : voir README.md)
+#    2. Copier le modèle ci-dessous en tête de la liste « documents », puis le remplir.
+#
+#  - date: "AAAA-MM-JJ"                date de publication (affichage)
+#    type: compte-rendu                compte-rendu, deliberation, proces-verbal,
+#                                      convocation, arrete-municipal,
+#                                      arrete-prefectoral ou divers
+#    numero: "AR_010_2026"             facultatif
+#    titre: "Objet du document"
+#    pdf: "AAAA-MM-JJ-sujet-court.pdf"  nom exact du fichier déposé
+# =====================================================================
+
+# Types de documents proposés dans le filtre (seuls les types présents s'affichent)
+types:
+  - code: compte-rendu
+    nom: "Compte rendu de séance"
+    pluriel: "Comptes rendus"
+  - code: deliberation
+    nom: "Délibérations"
+    pluriel: "Délibérations"
+  - code: proces-verbal
+    nom: "Procès-verbal"
+    pluriel: "Procès-verbaux"
+  - code: convocation
+    nom: "Convocation"
+    pluriel: "Convocations"
+  - code: arrete-municipal
+    nom: "Arrêté municipal"
+    pluriel: "Arrêtés municipaux"
+  - code: arrete-prefectoral
+    nom: "Arrêté préfectoral"
+    pluriel: "Arrêtés préfectoraux"
+  - code: divers
+    nom: "Divers"
+    pluriel: "Divers"
+
+# Années proposées dans le filtre
+annees: [2026]
+
+# Documents publiés (aucun pour le moment)
+documents: []

@@ -1,0 +1,16 @@
+# =====================================================================
+#  SÉCHERESSE : RESTRICTIONS DES USAGES DE L'EAU
+#  Encadrés de la page Infos & Alertes et rubrique « Sécheresse » de la page Vie pratique.
+#
+#  actif: true      afficher les encadrés (restrictions en cours)
+#  actif: false     les masquer (restrictions levées)
+#
+#  Source : vigieau.gouv.fr (consulté le 13 octobre 2026) — zone « Rhue »,
+#  arrêté préfectoral de limitation des usages de l'eau du 1er octobre 2026.
+# =====================================================================
+
+actif: true
+niveau: "crise"
+niveau_libelle: "niveau de crise"
+arrete: "arrêté préfectoral en vigueur du 3 au 31 octobre 2026"
+avis: "2026-09-09-eau-potable-appel-a-la-vigilance"

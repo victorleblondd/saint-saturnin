@@ -1,0 +1,20 @@
+# Fichiers que GitHub va chercher automatiquement et ajouter au site
+# (programme : outils/recuperer_fichiers.py, lancé par .github/workflows/recuperer-fichiers.yml).
+#
+# Une ligne par fichier :  adresse-source   chemin-dans-le-site   [largeur maximale, pour les photos]
+# - Si le chemin se termine par .pdf et que la source est une image (affiche), elle est convertie en PDF A4.
+#   Plusieurs images séparées par « | » (sans espace) donnent un PDF de plusieurs pages.
+# - Un fichier déjà présent dans le site n'est jamais téléchargé une deuxième fois.
+
+# Logos (repris du site de Saint-Bonnet-de-Condat)
+https://raw.githubusercontent.com/victorleblondd/saint-bonnet-de-condat/main/assets/images/blason-cantal.png  assets/images/blason-cantal.png
+https://raw.githubusercontent.com/victorleblondd/saint-bonnet-de-condat/main/assets/images/logo-massif-du-cezallier.png  assets/images/logo-massif-du-cezallier.png
+
+# Photo de l'accueil : la mairie (Pymouss, Wikimedia Commons, CC BY-SA 4.0)
+https://upload.wikimedia.org/wikipedia/commons/e/eb/Saint-Saturnin_15_-_mairie_20200809.jpg  assets/images/mairie.jpg  1600
+
+# Infos & Alertes : affiches de la mairie
+https://panneau-pocket.s3.gra.perf.cloud.ovh.net/source/sign_pdf/8683328246ab3a9fe98a219.43825554-1790159358.pdf  documents/infos-alertes/2026-09-23-tourbieres-du-jolan-et-de-la-gazelle.pdf
+https://panneau-pocket.s3.gra.perf.cloud.ovh.net/cache/sign_image/11287855956aaa6c19345f98.25573154-1789553689.jpg/23923ff44b126d0e2eb9826514b02c21  documents/infos-alertes/2026-09-16-horaires-du-bar-intersaison.pdf
+https://panneau-pocket.s3.gra.perf.cloud.ovh.net/cache/sign_image/1101552756a8ef389161bc8.67572494-1787753353.jpg/b034c678a4f74ea19a1b02116ce0fb84  documents/infos-alertes/2026-08-26-epicerie-livraison-a-domicile.pdf
+https://panneau-pocket.s3.gra.perf.cloud.ovh.net/cache/sign_image/12053447656a06de4f842684.95609207-1778835023.png/3d27bea1897683a2aaf2601218eb615c  documents/infos-alertes/2026-05-15-horaires-de-l-epicerie.pdf

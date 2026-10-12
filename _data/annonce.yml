@@ -1,0 +1,11 @@
+# =====================================================================
+#  BANDEAU D'ANNONCE DE L'ACCUEIL
+#  Bandeau temporaire sur toute la largeur, sous le menu et au-dessus de l'image d'accueil.
+#
+#  message: "Texte du bandeau"     laisser vide ("") pour ne rien afficher
+#  jusquau: "AAAA-MM-JJ"           dernier jour d'affichage (inclus) :
+#                                  le bandeau disparaît tout seul le lendemain
+# =====================================================================
+
+message: ""
+jusquau: ""

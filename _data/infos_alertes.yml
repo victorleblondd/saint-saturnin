@@ -1,0 +1,106 @@
+# =====================================================================
+#  INFOS & ALERTES DE LA MAIRIE
+#  La publication la plus récente se place TOUT EN HAUT de la liste.
+#
+#  Ajouter un avis en PDF :
+#    1. Déposer le fichier PDF dans le dossier  documents/infos-alertes/
+#       Nom conseillé : AAAA-MM-JJ-sujet-court.pdf  (sans accents ni espaces)
+#       (ou ajouter son adresse dans outils/fichiers-a-recuperer.txt : voir README.md)
+#    2. Copier le modèle ci-dessous tout en haut de la liste, puis le remplir.
+#
+#  - date: "AAAA-MM-JJ"               date de l'avis
+#    heure: "HH:MM"                   facultatif
+#    type: alerte                     alerte (rouge) ou info (bleu)
+#    theme: eau                       eau, travaux, vie (services et vie locale)
+#    titre: "Titre de l'avis"
+#    resume: "Une ou deux phrases qui disent l'essentiel."
+#    pdf: "AAAA-MM-JJ-sujet-court.pdf"    nom exact du fichier déposé
+#    bandeau_jusquau: "AAAA-MM-JJ"    facultatif : bandeau rouge sur l'accueil
+#                                     jusqu'à cette date incluse (alertes)
+#
+#  Champ facultatif « texte » : le texte complet de l'avis (version lisible
+#  sans ouvrir le PDF). Les avis sans PDF affichent ce texte.
+# =====================================================================
+
+- date: "2026-09-23"
+  type: info
+  theme: vie
+  titre: "L'eau dans la réserve des tourbières du Jolan et de la Gazelle, jeudi 15 octobre"
+  resume: "Le Parc des Volcans d'Auvergne présente deux études menées dans la réserve naturelle régionale, le jeudi 15 octobre de 9 h à 12 h 30, à Ségur-les-Villas. Gratuit, sur inscription avant le 13 octobre."
+  pdf: "2026-09-23-tourbieres-du-jolan-et-de-la-gazelle.pdf"
+  texte: |
+    <p><strong>L'eau dans la réserve des tourbières du Jolan et de la Gazelle : entre qualité et préservation.</strong></p>
+    <p><strong>Jeudi 15 octobre 2026, de 9 h à 12 h 30</strong>, à Ségur-les-Villas. Rendez-vous à la salle polyvalente de Ségur-les-Villas.</p>
+    <ul>
+      <li>présentation de deux études : les poissons et les écrevisses ; la qualité de l'eau de l'étang du Jolan et son influence sur les tourbières ;</li>
+      <li>sortie dans la réserve naturelle et pique-nique tiré du sac.</li>
+    </ul>
+    <p>Gratuit. <strong>Inscription obligatoire avant le 13 octobre</strong> : <a href="tel:+33471202210">04 71 20 22 10</a> ou <a href="mailto:lquinquiry@parcdesvolcans.fr">lquinquiry@parcdesvolcans.fr</a>.</p>
+    <p>Atelier proposé par le Parc des Volcans d'Auvergne, en partenariat avec la commune de Ségur-les-Villas, avec le soutien financier de l'Agence de l'eau Adour-Garonne et de la Région Auvergne-Rhône-Alpes.</p>
+
+- date: "2026-09-16"
+  type: info
+  theme: vie
+  titre: "Le Gentil Bar Tranquille : horaires d'intersaison jusqu'au 25 octobre"
+  resume: "Du 1er septembre au 25 octobre 2026, le bar est ouvert tous les jours dès 9 h : jusqu'à 14 h le lundi et le jeudi, jusqu'à 19 h les mardi, mercredi, vendredi et dimanche, et le samedi de 9 h à 14 h puis de 17 h à 19 h."
+  pdf: "2026-09-16-horaires-du-bar-intersaison.pdf"
+  texte: |
+    <p>Horaires d'intersaison du Gentil Bar Tranquille, <strong>du 1<sup>er</sup> septembre au 25 octobre 2026</strong> :</p>
+    <ul>
+      <li>lundi : 9 h – 14 h ;</li>
+      <li>mardi : 9 h – 19 h ;</li>
+      <li>mercredi : 9 h – 19 h ;</li>
+      <li>jeudi : 9 h – 14 h ;</li>
+      <li>vendredi : 9 h – 19 h ;</li>
+      <li>samedi : 9 h – 14 h et 17 h – 19 h ;</li>
+      <li>dimanche : 9 h – 19 h.</li>
+    </ul>
+
+- date: "2026-09-09"
+  heure: "15:54"
+  type: alerte
+  theme: eau
+  titre: "Eau potable : appel à la vigilance"
+  resume: "L'alimentation en eau potable devient préoccupante : les débits des captages diminuent chaque jour et les châteaux d'eau se remplissent difficilement. Limitez dès à présent votre consommation d'eau au strict nécessaire."
+  texte: |
+    <p>L'alimentation en eau potable devient préoccupante. Les débits des captages diminuent chaque jour, et les châteaux d'eau se remplissent difficilement.</p>
+    <p>Nous appelons chacun à la vigilance et à limiter dès à présent sa consommation d'eau au <strong>strict nécessaire</strong> : consommation humaine, consommation animale, fabrication des fromages.</p>
+    <p>Merci à toutes et à tous pour votre vigilance et votre mobilisation. Nous vous informerons quand la situation sera redevenue normale.</p>
+
+- date: "2026-08-26"
+  type: info
+  theme: vie
+  titre: "L'épicerie du P'tit Clam's livre à domicile dès la mi-septembre"
+  resume: "Commandez au plus tard le mercredi midi pour être livré le jeudi, sur rendez-vous, directement devant chez vous."
+  pdf: "2026-08-26-epicerie-livraison-a-domicile.pdf"
+  texte: |
+    <p>L'épicerie du P'tit Clam's vous propose, dès la mi-septembre, un <strong>service de livraison à domicile</strong>.</p>
+    <ul>
+      <li>passez vos commandes <strong>au plus tard le mercredi midi</strong> ;</li>
+      <li>livraison <strong>le jeudi</strong>, sur rendez-vous, directement devant chez vous.</li>
+    </ul>
+    <p>Pour plus d'informations, n'hésitez pas à contacter l'épicerie : 3 route de la Gare, 15190 Saint-Saturnin, <a href="tel:+33685209292">06 85 20 92 92</a> ou <a href="tel:+33604142672">06 04 14 26 72</a>.</p>
+
+- date: "2026-05-15"
+  type: info
+  theme: vie
+  titre: "Horaires d'ouverture de l'épicerie du P'tit Clam's"
+  resume: "L'épicerie est ouverte du mardi au vendredi de 7 h à 12 h 30 et de 16 h 30 à 19 h, le samedi et le dimanche de 7 h à 12 h 30. Elle est fermée le lundi."
+  pdf: "2026-05-15-horaires-de-l-epicerie.pdf"
+  texte: |
+    <p>Horaires d'ouverture de l'épicerie du P'tit Clam's :</p>
+    <ul>
+      <li>lundi : fermé ;</li>
+      <li>du mardi au vendredi : 7 h – 12 h 30 et 16 h 30 – 19 h ;</li>
+      <li>samedi et dimanche : 7 h – 12 h 30.</li>
+    </ul>
+    <p>Merci de votre confiance !</p>
+
+- date: "2026-03-31"
+  type: info
+  theme: vie
+  titre: "Infos pratiques de la mairie"
+  resume: "La mairie se trouve 2 rue de l'Étang, à Saint-Saturnin. Pour la contacter : 04 71 20 73 22 ou mairie.saint-saturnin15@wanadoo.fr."
+  texte: |
+    <p><strong>Adresse de la mairie</strong> : 2 rue de l'Étang, 15190 Saint-Saturnin.</p>
+    <p><strong>Contacter la mairie</strong> : <a href="tel:+33471207322">04 71 20 73 22</a> · <a href="mailto:mairie.saint-saturnin15@wanadoo.fr">mairie.saint-saturnin15@wanadoo.fr</a>.</p>

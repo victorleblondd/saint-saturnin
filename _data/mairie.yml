@@ -1,0 +1,32 @@
+# Coordonnées et horaires de la mairie — utilisés dans l'en-tête, le pied de page et les pages.
+# Modifier ici une seule fois : tout le site se met à jour.
+# Sources : avis de la mairie du 31 mars 2026 et annuaire de l'administration (Service-Public, mis à jour le 5 mai 2026).
+
+nom: "Mairie de Saint-Saturnin"
+adresse_ligne1: "2 rue de l'Étang"
+adresse_ligne2: "15190 Saint-Saturnin"
+telephone: "04 71 20 73 22"
+telephone_lien: "+33471207322"
+email: "mairie.saint-saturnin15@wanadoo.fr"
+facebook_url: "https://www.facebook.com/p/Saint-Saturnin-100064269895896/"
+
+# Horaires d'ouverture du secrétariat de mairie
+horaires_court: "les lundi, mercredi et vendredi, de 9 h à 12 h 30 et de 13 h 30 à 17 h"
+horaires:
+  - jour: Lundi
+    matin: "9 h – 12 h 30"
+    apres_midi: "13 h 30 – 17 h"
+  - jour: Mardi
+    ferme: true
+  - jour: Mercredi
+    matin: "9 h – 12 h 30"
+    apres_midi: "13 h 30 – 17 h"
+  - jour: Jeudi
+    ferme: true
+  - jour: Vendredi
+    matin: "9 h – 12 h 30"
+    apres_midi: "13 h 30 – 17 h"
+  - jour: Samedi
+    ferme: true
+  - jour: Dimanche
+    ferme: true

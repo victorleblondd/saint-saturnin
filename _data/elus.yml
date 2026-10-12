@@ -1,0 +1,27 @@
+# Conseil municipal élu en mars 2026 (onze conseillers).
+# Source : Répertoire national des élus (ministère de l'Intérieur), version du 11 août 2026.
+# Le maire et les adjoints sont en fonctions depuis le 27 mars 2026.
+
+installation: "27 mars 2026"
+
+maire:
+  nom: "Claire Andrieux Jannetta"
+  fonction: "Maire"
+
+adjoints:
+  - nom: "Gérard Rivoire"
+    fonction: "1er adjoint"
+  - nom: "Bérénice Rapior"
+    fonction: "2e adjointe"
+  - nom: "Jean-Paul Cornet"
+    fonction: "3e adjoint"
+
+# Ordre alphabétique
+conseillers:
+  - "Antoine Albaret"
+  - "Éric Brihat"
+  - "Gilles Clavel"
+  - "Gwendoline Lalire"
+  - "Marie Mercier"
+  - "Chantal Momper"
+  - "Nathalie Plo"
