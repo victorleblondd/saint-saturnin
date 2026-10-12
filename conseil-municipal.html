@@ -1,0 +1,47 @@
+---
+title: "Le conseil municipal"
+permalink: /conseil-municipal/
+chapo: "Onze élus au service de la commune, élus en mars 2026 pour six ans. La maire et ses trois adjoints sont en fonctions depuis le 27 mars 2026."
+description: "Le conseil municipal de Saint-Saturnin : la maire Claire Andrieux Jannetta, les trois adjoints et les conseillers municipaux élus en mars 2026."
+---
+{%- assign e = site.data.elus -%}
+{%- assign m = site.data.mairie -%}
+<section class="bloc" aria-labelledby="titre-maire">
+  <h2 id="titre-maire" class="titre-decore">La maire et les adjoints</h2>
+  <p class="bloc-intro">Pour toute question, contactez l'élu chargé du sujet par l'intermédiaire de la mairie, au <a href="tel:{{ m.telephone_lien }}">{{ m.telephone }}</a>.</p>
+  <div class="grille-4">
+    <div class="panneau carte-elu">
+      <p class="fonction">{{ e.maire.fonction }}</p>
+      <h3 class="nom">{{ e.maire.nom }}</h3>
+    </div>
+    {%- for a in e.adjoints %}
+    <div class="panneau carte-elu">
+      <p class="fonction">{{ a.fonction | replace: "1er", "1<sup>er</sup>" | replace: "2e", "2<sup>e</sup>" | replace: "3e", "3<sup>e</sup>" }}</p>
+      <h3 class="nom">{{ a.nom }}</h3>
+    </div>
+    {%- endfor %}
+  </div>
+</section>
+
+<div class="grille-asymetrique bloc">
+  <section class="panneau" aria-labelledby="titre-conseillers">
+    <h2 id="titre-conseillers" class="h3-like">Les conseillers municipaux</h2>
+    <ul class="liste-noms">
+      {%- for c in e.conseillers %}
+      <li>{{ c }}</li>
+      {%- endfor %}
+    </ul>
+  </section>
+  <div class="pile">
+    <section class="panneau panneau--info" aria-labelledby="titre-seances">
+      <h2 id="titre-seances" class="h3-like">Les séances du conseil</h2>
+      <p>Les séances du conseil municipal sont publiques. Convocations, comptes rendus et délibérations : voir l'affichage légal.</p>
+      <p><a class="lien-fleche" href="{{ '/affichage-legal/' | relative_url }}">Affichage légal{% include icone.html nom="fleche" %}</a></p>
+    </section>
+    <section class="panneau" aria-labelledby="titre-intercommunalite">
+      <h2 id="titre-intercommunalite" class="h3-like">Hautes Terres Communauté</h2>
+      <p>Saint-Saturnin fait partie de Hautes Terres Communauté, la communauté de communes dont le siège est à Murat.</p>
+      <p><a class="lien-fleche" href="https://www.hautesterres.fr" rel="noopener">hautesterres.fr{% include icone.html nom="externe" %}</a></p>
+    </section>
+  </div>
+</div>

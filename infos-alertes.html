@@ -1,0 +1,61 @@
+---
+title: "Infos & Alertes"
+permalink: /infos-alertes/
+chapo: "Les avis de la mairie : alertes, travaux, horaires, animations et informations importantes. Chaque affiche s'ouvre en PDF, telle qu'elle a été publiée."
+description: "Les avis et alertes de la mairie de Saint-Saturnin : eau potable, sécheresse, commerces, animations et informations importantes."
+---
+{%- assign tous = site.data.infos_alertes -%}
+{%- assign m = site.data.mairie -%}
+{%- assign n_alertes = 0 -%}{%- assign n_eau = 0 -%}{%- assign n_travaux = 0 -%}{%- assign n_vie = 0 -%}
+{%- for it in tous -%}
+  {%- if it.type == "alerte" -%}{%- assign n_alertes = n_alertes | plus: 1 -%}{%- endif -%}
+  {%- if it.theme == "eau" -%}{%- assign n_eau = n_eau | plus: 1 -%}{%- endif -%}
+  {%- if it.theme == "travaux" -%}{%- assign n_travaux = n_travaux | plus: 1 -%}{%- endif -%}
+  {%- if it.theme == "vie" -%}{%- assign n_vie = n_vie | plus: 1 -%}{%- endif -%}
+{%- endfor -%}
+<div class="grille-asymetrique">
+  <div>
+    <ul class="filtres" data-filtres hidden aria-label="Filtrer les avis">
+      <li><button type="button" data-filtre="tout" aria-pressed="true">Tous<span class="nombre">{{ tous.size }}</span></button></li>
+      {%- if n_alertes > 0 %}
+      <li><button type="button" data-filtre="alerte" aria-pressed="false">Alertes<span class="nombre">{{ n_alertes }}</span></button></li>
+      {%- endif %}
+      {%- if n_eau > 0 %}
+      <li><button type="button" data-filtre="eau" aria-pressed="false">Eau<span class="nombre">{{ n_eau }}</span></button></li>
+      {%- endif %}
+      {%- if n_travaux > 0 %}
+      <li><button type="button" data-filtre="travaux" aria-pressed="false">Travaux<span class="nombre">{{ n_travaux }}</span></button></li>
+      {%- endif %}
+      {%- if n_vie > 0 %}
+      <li><button type="button" data-filtre="vie" aria-pressed="false">Services et vie locale<span class="nombre">{{ n_vie }}</span></button></li>
+      {%- endif %}
+    </ul>
+    <div class="liste-avis">
+      {%- assign mois_courant = "" -%}
+      {%- for it in tous -%}
+      {%- assign mois_item = it.date | slice: 0, 7 -%}
+      {%- if mois_item != mois_courant %}
+      <h2 class="mois">{% include date-fr.html date=it.date mois_seul=true %}</h2>
+      {%- assign mois_courant = mois_item -%}
+      {%- endif %}
+      {% include avis.html item=it %}
+      {%- endfor %}
+      <p class="aucun-resultat" data-aucun-resultat hidden>Aucun avis dans cette catégorie.</p>
+    </div>
+  </div>
+  <aside class="pile-laterale">
+    {%- assign s = site.data.secheresse %}
+    {%- if s.actif %}
+    <div class="panneau panneau--alerte">
+      <h3>Sécheresse : restrictions d'eau</h3>
+      <p>La commune est placée au <strong>{{ s.niveau_libelle }}</strong> ({{ s.arrete }}) : les usages de l'eau sont strictement limités.</p>
+      <p>Le détail des mesures pour votre adresse : <a href="https://vigieau.gouv.fr/" rel="noopener"><strong>vigieau.gouv.fr</strong></a>.</p>
+      <p><a class="lien-fleche" href="{{ '/vie-pratique/' | relative_url }}#secheresse">En savoir plus{% include icone.html nom="fleche" %}</a></p>
+    </div>
+    {%- endif %}
+    <div class="panneau panneau--info">
+      <h3>Un problème sur la commune ?</h3>
+      <p>Fuite d'eau, voirie abîmée, éclairage en panne : prévenez la mairie au <a href="tel:{{ m.telephone_lien }}"><strong>{{ m.telephone }}</strong></a> ou à <a href="mailto:{{ m.email }}">{{ m.email | replace: "@", "@<wbr>" }}</a>.</p>
+    </div>
+  </aside>
+</div>

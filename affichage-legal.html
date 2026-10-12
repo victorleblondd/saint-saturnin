@@ -1,0 +1,72 @@
+---
+title: "Affichage légal"
+permalink: /affichage-legal/
+chapo: "Convocations et comptes rendus du conseil municipal, délibérations, procès-verbaux et arrêtés de la commune, à consulter en PDF."
+description: "Affichage légal de la commune de Saint-Saturnin : comptes rendus du conseil municipal, délibérations, procès-verbaux, convocations et arrêtés."
+---
+{%- assign al = site.data.affichage_legal -%}
+{%- assign docs = al.documents -%}
+{%- assign m = site.data.mairie -%}
+{%- if docs.size > 0 %}
+<div class="filtres-actes" data-filtres-actes hidden>
+  <div class="filtres-ligne">
+    <p class="filtres-titre" id="filtre-type">Type</p>
+    <ul class="filtres" aria-labelledby="filtre-type">
+      <li><button type="button" data-critere="type" data-valeur="tout" aria-pressed="true">Tous<span class="nombre">{{ docs.size }}</span></button></li>
+      {%- for t in al.types %}
+      {%- assign n = 0 -%}
+      {%- for d in docs -%}{%- if d.type == t.code -%}{%- assign n = n | plus: 1 -%}{%- endif -%}{%- endfor -%}
+      {%- if n > 0 %}
+      <li><button type="button" data-critere="type" data-valeur="{{ t.code }}" aria-pressed="false">{{ t.pluriel }}<span class="nombre">{{ n }}</span></button></li>
+      {%- endif %}
+      {%- endfor %}
+    </ul>
+  </div>
+  {%- if al.annees.size > 1 %}
+  <div class="filtres-ligne">
+    <p class="filtres-titre" id="filtre-annee">Année</p>
+    <ul class="filtres" aria-labelledby="filtre-annee">
+      <li><button type="button" data-critere="annee" data-valeur="tout" aria-pressed="true">Toutes</button></li>
+      {%- for a in al.annees %}
+      <li><button type="button" data-critere="annee" data-valeur="{{ a }}" aria-pressed="false">{{ a }}</button></li>
+      {%- endfor %}
+    </ul>
+  </div>
+  {%- endif %}
+</div>
+{%- endif %}
+
+<div class="liste-actes">
+  {%- assign annee_courante = "" -%}
+  {%- for d in docs -%}
+  {%- assign annee = d.date | slice: 0, 4 -%}
+  {%- if annee != annee_courante %}
+  <h2 class="annee">{{ annee }}</h2>
+  {%- assign annee_courante = annee -%}
+  {%- endif -%}
+  {%- assign type_nom = d.type -%}
+  {%- for t in al.types -%}{%- if t.code == d.type -%}{%- assign type_nom = t.nom -%}{%- endif -%}{%- endfor -%}
+  {%- assign lien = "/documents/affichage-legal/" | append: d.pdf | relative_url %}
+  <article class="acte acte--{{ d.type }}" data-type="{{ d.type }}" data-annee="{{ annee }}">
+    <div class="avis-meta">
+      <span class="etiquette etiquette--neutre">{{ type_nom }}</span>
+      <time datetime="{{ d.date }}">Publié le {% include date-fr.html date=d.date %}</time>
+      <span class="format">{% include icone.html nom="document" %}PDF</span>
+      {%- if d.numero %}
+      <span>n° {{ d.numero }}</span>
+      {%- endif %}
+    </div>
+    <h3 class="avis-titre"><a href="{{ lien }}" target="_blank" rel="noopener">{{ d.titre }}<span class="visuellement-cache"> (PDF, nouvel onglet)</span></a></h3>
+  </article>
+  {%- endfor %}
+  {%- if docs.size > 0 %}
+  <p class="aucun-resultat" data-actes-vide hidden>Aucun document ne correspond à cette sélection.</p>
+  {%- else %}
+  <p class="aucun-resultat">Aucun document n'est publié pour le moment. Les documents officiels de la commune sont consultables en mairie.</p>
+  {%- endif %}
+</div>
+
+<div class="grille-2">
+  <p class="note">Les décisions d'urbanisme (permis de construire, déclarations préalables) sont affichées en mairie.</p>
+  <p class="note">Une question sur un document ? Contactez la mairie au <a href="tel:{{ m.telephone_lien }}">{{ m.telephone }}</a> ou à <a href="mailto:{{ m.email }}">{{ m.email | replace: "@", "@<wbr>" }}</a>.</p>
+</div>
