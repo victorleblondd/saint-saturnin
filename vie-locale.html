@@ -1,0 +1,70 @@
+---
+title: "Vie locale"
+permalink: /vie-locale/
+chapo: "Commerces, restaurant et associations de la commune."
+description: "Vie locale à Saint-Saturnin : l'épicerie du P'tit Clam's et sa livraison à domicile, le Gentil Bar Tranquille, le restaurant Le Moulin de la Santoire et les associations de la commune."
+---
+{%- assign m = site.data.mairie -%}
+<nav class="sommaire" aria-label="Sur cette page">
+  <ul>
+    <li><a href="#commerces">Commerces et restaurant</a></li>
+    <li><a href="#associations">Associations</a></li>
+  </ul>
+</nav>
+
+<section class="bloc" id="commerces" aria-labelledby="titre-commerces">
+  <h2 id="titre-commerces" class="titre-decore">Commerces et restaurant</h2>
+  <div class="grille-3">
+    <div class="panneau">
+      <p class="surtitre">Épicerie · livraison à domicile</p>
+      <h3>L'épicerie du P'tit Clam's</h3>
+      <p>Ouverte du mardi au vendredi de 7 h à 12 h 30 et de 16 h 30 à 19 h, le samedi et le dimanche de 7 h à 12 h 30. Fermée le lundi.</p>
+      <p>Livraison à domicile le jeudi, sur rendez-vous : commandez au plus tard le mercredi midi.</p>
+      <div class="coordonnees">
+        <p>{% include icone.html nom="lieu" %}<span>3 route de la Gare</span></p>
+        <p>{% include icone.html nom="telephone" %}<span><a href="tel:+33685209292">06 85 20 92 92</a> ou <a href="tel:+33604142672">06 04 14 26 72</a></span></p>
+      </div>
+    </div>
+    <div class="panneau">
+      <p class="surtitre">Bar</p>
+      <h3>Le Gentil Bar Tranquille</h3>
+      <p>Horaires d'intersaison, du 1<sup>er</sup> septembre au 25 octobre 2026 : tous les jours dès 9 h, jusqu'à 14 h le lundi et le jeudi, jusqu'à 19 h les mardi, mercredi, vendredi et dimanche ; le samedi de 9 h à 14 h et de 17 h à 19 h.</p>
+      <div class="coordonnees">
+        <p>{% include icone.html nom="lieu" %}<span>2 place Édouard-Serre</span></p>
+      </div>
+      <p><a class="lien-fleche" href="{{ '/infos-alertes/' | relative_url }}#2026-09-16-le-gentil-bar-tranquille-horaires-d-intersaison-jusqu-au-25-octobre">L'avis de la mairie{% include icone.html nom="fleche" %}</a></p>
+    </div>
+    <div class="panneau">
+      <p class="surtitre">Restaurant · Bib Gourmand</p>
+      <h3>Le Moulin de la Santoire</h3>
+      <p>Dans un ancien moulin rénové, une cuisine créative fondée sur les produits locaux. Le restaurant a reçu le Bib Gourmand du Guide Michelin en 2024, 2025 et 2026.</p>
+      <div class="coordonnees">
+        <p>{% include icone.html nom="lieu" %}<span>La Plaine</span></p>
+        <p>{% include icone.html nom="telephone" %}<a href="tel:+33471734725">04 71 73 47 25</a></p>
+        <p>{% include icone.html nom="externe" %}<a href="https://lemoulindelasantoire.fr" rel="noopener">lemoulindelasantoire.fr</a></p>
+      </div>
+    </div>
+  </div>
+  <p class="note bloc-suite">Horaires donnés à titre indicatif : renseignez-vous auprès de chaque établissement. Vous exercez une activité sur la commune et souhaitez figurer sur cette page ? Contactez la mairie.</p>
+</section>
+
+<section class="bloc" id="associations" aria-labelledby="titre-associations">
+  <h2 id="titre-associations" class="titre-decore">Les associations</h2>
+  <div class="grille-asymetrique">
+    <div>
+      <p>Les associations dont le siège est à Saint-Saturnin :</p>
+      <ul class="liste-simple">
+        <li><strong>Comité des fêtes</strong></li>
+        <li><strong>La Boule du Lemmet</strong>, club sportif</li>
+        <li><strong>Observatoire d'astrophysique Cézallier Cantal</strong> (OACC), au lieu-dit Soulages</li>
+        <li><strong>Partageons notre Limon</strong>, au lieu-dit Marmiers</li>
+        <li><strong>Bouge ta Nature</strong>, activités de loisirs</li>
+      </ul>
+      <p class="note">Liste établie d'après le répertoire des entreprises et des associations de l'Insee (Sirene).</p>
+    </div>
+    <div class="panneau panneau--info">
+      <h3>Votre association sur ce site</h3>
+      <p>Les associations qui souhaitent présenter leurs activités, leurs rendez-vous et leurs contacts sur cette page peuvent s'adresser à la mairie, au <a href="tel:{{ m.telephone_lien }}">{{ m.telephone }}</a> ou à <a href="mailto:{{ m.email }}">{{ m.email | replace: "@", "@<wbr>" }}</a>.</p>
+    </div>
+  </div>
+</section>

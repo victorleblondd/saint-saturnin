@@ -1,0 +1,125 @@
+---
+title: "Vie pratique"
+permalink: /vie-pratique/
+chapo: "Urgences et santé, eau potable et sécheresse, déchets, transports, enfance et jeunesse : les informations utiles au quotidien."
+description: "Vie pratique à Saint-Saturnin : numéros d'urgence, maison de santé et pharmacie à proximité, eau potable, restrictions liées à la sécheresse, déchets, transport à la demande et accueils de loisirs."
+---
+{%- assign m = site.data.mairie -%}
+{%- assign s = site.data.secheresse -%}
+<nav class="sommaire" aria-label="Sur cette page">
+  <ul>
+    <li><a href="#sante">Urgences et santé</a></li>
+    <li><a href="#eau">Eau potable</a></li>
+    {%- if s.actif %}
+    <li><a href="#secheresse">Sécheresse</a></li>
+    {%- endif %}
+    <li><a href="#dechets">Déchets</a></li>
+    <li><a href="#transports">Transports</a></li>
+    <li><a href="#jeunesse">Enfance et jeunesse</a></li>
+  </ul>
+</nav>
+
+<section class="bloc" id="sante" aria-labelledby="titre-sante">
+  <h2 id="titre-sante" class="titre-decore">Urgences et santé</h2>
+  <ul class="urgences" aria-label="Numéros d'urgence">
+    <li><a href="tel:112"><span class="urgence-numero">112</span><span>Appel d'urgence européen</span></a></li>
+    <li><a href="tel:15"><span class="urgence-numero">15</span><span>SAMU</span></a></li>
+    <li><a href="tel:18"><span class="urgence-numero">18</span><span>Pompiers</span></a></li>
+    <li><a href="tel:17"><span class="urgence-numero">17</span><span>Gendarmerie</span></a></li>
+  </ul>
+  <div class="grille-2">
+    <div class="panneau">
+      <h3>Maison de santé du Cézallier</h3>
+      <p>À Condat.</p>
+      <div class="coordonnees">
+        <p>{% include icone.html nom="telephone" %}<a href="tel:+33471696659">04 71 69 66 59</a></p>
+      </div>
+    </div>
+    <div class="panneau">
+      <h3>Pharmacie du Cézallier</h3>
+      <p>À Marcenat.</p>
+      <div class="coordonnees">
+        <p>{% include icone.html nom="lieu" %}<span>29 Grande Rue, 15190 Marcenat</span></p>
+        <p>{% include icone.html nom="telephone" %}<a href="tel:+33471788115">04 71 78 81 15</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bloc" id="eau" aria-labelledby="titre-eau">
+  <h2 id="titre-eau" class="titre-decore">Eau potable</h2>
+  <div class="grille-asymetrique">
+    <div>
+      <p>En période de sécheresse, les débits des captages diminuent et les châteaux d'eau se remplissent difficilement. La mairie demande alors à chacun de limiter sa consommation d'eau au strict nécessaire : consommation humaine, consommation animale et fabrication des fromages.</p>
+      <p><a class="lien-fleche" href="{{ '/infos-alertes/' | relative_url }}#{{ s.avis }}">L'appel à la vigilance de la mairie{% include icone.html nom="fleche" %}</a></p>
+    </div>
+    <div class="panneau panneau--info">
+      <h3>Une fuite, un problème d'eau ?</h3>
+      <p>Prévenez la mairie au <a href="tel:{{ m.telephone_lien }}"><strong>{{ m.telephone }}</strong></a>.</p>
+    </div>
+  </div>
+</section>
+
+{%- if s.actif %}
+<section class="bloc" id="secheresse" aria-labelledby="titre-secheresse">
+  <h2 id="titre-secheresse" class="titre-decore">Sécheresse : restrictions des usages de l'eau</h2>
+  <div class="panneau panneau--alerte">
+    <p class="mise-en-avant">Saint-Saturnin est placée au {{ s.niveau_libelle }} sécheresse ({{ s.arrete }}).</p>
+    <p>Pour les particuliers, notamment :</p>
+    <ul>
+      <li>arrosage des pelouses, des massifs fleuris et des jardins d'agrément interdit ;</li>
+      <li>arrosage des potagers interdit de 8 h à 20 h ;</li>
+      <li>lavage des véhicules interdit, sauf impératif sanitaire ;</li>
+      <li>remplissage et vidange des piscines privées interdits ;</li>
+      <li>nettoyage des façades, toitures, trottoirs et voiries interdit, sauf impératif sanitaire ou de sécurité ;</li>
+      <li>fontaines interdites, sauf en circuit fermé.</li>
+    </ul>
+    <p>Les restrictions peuvent évoluer. Toutes les mesures qui s'appliquent à votre adresse sont détaillées sur <a href="https://vigieau.gouv.fr/" rel="noopener">vigieau.gouv.fr</a>, le site officiel de l'État. Plus d'informations sur <a href="https://www.cantal.gouv.fr" rel="noopener">cantal.gouv.fr</a>.</p>
+  </div>
+</section>
+{%- endif %}
+
+<section class="bloc" id="dechets" aria-labelledby="titre-dechets">
+  <h2 id="titre-dechets" class="titre-decore">Déchets</h2>
+  <div class="grille-2">
+    <div class="panneau">
+      <h3>Collecte et tri</h3>
+      <p>La collecte des déchets ménagers et des déchets recyclables est assurée par Hautes Terres Communauté, dont fait partie Saint-Saturnin.</p>
+      <p><a class="lien-fleche" href="https://www.hautesterres.fr/vivre-et-habiter/gerer-et-reduire-ses-dechets/" rel="noopener">Gérer et réduire ses déchets{% include icone.html nom="externe" %}</a></p>
+    </div>
+    <div class="panneau">
+      <h3>Déchetteries</h3>
+      <p>Les déchetteries intercommunales se trouvent à Massiac et à Neussargues-Moissac (accès par la RD 679, route d'Allanche). Le <strong>Pass Déchetterie</strong> est obligatoire pour y entrer : il se demande avec un justificatif de domicile de moins de six mois.</p>
+      <p><a class="lien-fleche" href="https://www.hautesterres.fr/vivre-et-habiter/gerer-et-reduire-ses-dechets/dechetteries/" rel="noopener">Horaires et Pass Déchetterie{% include icone.html nom="externe" %}</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="bloc" id="transports" aria-labelledby="titre-transports">
+  <h2 id="titre-transports" class="titre-decore">Transports</h2>
+  <div class="grille-2">
+    <div class="panneau">
+      <h3>Transport à la demande</h3>
+      <p>Le service de Hautes Terres Communauté fonctionne du lundi au vendredi, sauf les jours fériés. Réservez entre un mois et 48 heures avant le trajet au <a href="tel:+33471640657"><strong>04 71 64 06 57</strong></a> ou à <a href="mailto:tad@hautesterres.fr">tad@hautesterres.fr</a> ; pour un trajet le lundi ou le mardi, réservez au plus tard le vendredi précédent, à midi.</p>
+      <p><a class="lien-fleche" href="https://www.hautesterres.fr/vivre-et-habiter/se-deplacer/tad/" rel="noopener">Le transport à la demande{% include icone.html nom="externe" %}</a></p>
+    </div>
+    <div class="panneau">
+      <h3>Hautes Terres Communauté</h3>
+      <div class="coordonnees">
+        <p>{% include icone.html nom="lieu" %}<span>4 rue du Faubourg Notre-Dame<br>15300 Murat</span></p>
+        <p>{% include icone.html nom="telephone" %}<a href="tel:+33471202262">04 71 20 22 62</a></p>
+        <p>{% include icone.html nom="email" %}<a href="mailto:contact@hautesterres.fr">contact@<wbr>hautesterres.fr</a></p>
+        <p>{% include icone.html nom="externe" %}<a href="https://www.hautesterres.fr" rel="noopener">hautesterres.fr</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bloc" id="jeunesse" aria-labelledby="titre-jeunesse">
+  <h2 id="titre-jeunesse" class="titre-decore">Enfance et jeunesse</h2>
+  <div class="panneau">
+    <h3>Accueils de loisirs</h3>
+    <p>Hautes Terres Communauté accueille les enfants de 3 à 12 ans pendant les vacances scolaires. Pour le secteur du Cézallier, dont fait partie Saint-Saturnin, l'accueil se fait à Massiac aux vacances d'hiver, de printemps et d'automne, et à l'école publique d'Allanche l'été.</p>
+    <p><a class="lien-fleche" href="https://www.hautesterres.fr/vivre-et-habiter/bien-grandir/alsh-accueil-de-loisirs/" rel="noopener">Dates, inscriptions et contacts{% include icone.html nom="externe" %}</a></p>
+  </div>
+</section>
