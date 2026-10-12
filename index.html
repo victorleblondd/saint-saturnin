@@ -1,0 +1,144 @@
+---
+layout: default
+title: Accueil
+permalink: /
+classe_corps: page-accueil
+description: "Saint-Saturnin (Cantal), village du Cézallier : infos et alertes de la mairie, horaires, conseil municipal, vie pratique, vie locale et patrimoine."
+---
+{%- assign m = site.data.mairie -%}
+{%- include bandeau-annonce.html -%}
+{%- assign alerte = nil -%}
+{%- for it in site.data.infos_alertes -%}{%- if it.type == "alerte" -%}{%- assign alerte = it -%}{%- break -%}{%- endif -%}{%- endfor -%}
+{%- if alerte %}
+{%- capture ancre_alerte -%}{{ alerte.date }}-{{ alerte.titre | slugify: "latin" }}{%- endcapture -%}
+<div class="bandeau-alerte" role="region" aria-label="Alerte de la mairie" data-bandeau-date="{{ alerte.date }}"{% if alerte.bandeau_jusquau %} data-bandeau-fin="{{ alerte.bandeau_jusquau }}"{% endif %} hidden>
+  <div class="conteneur">
+    {% include icone.html nom="alerte" %}
+    <div class="bandeau-alerte-texte">
+      <p class="bandeau-alerte-titre">Alerte : {{ alerte.titre }}</p>
+      <p>{{ alerte.resume }}</p>
+    </div>
+    {%- if alerte.pdf %}
+    <a class="bouton bouton--clair" href="{{ '/documents/infos-alertes/' | append: alerte.pdf | relative_url }}" target="_blank" rel="noopener">Lire l'alerte (PDF)</a>
+    {%- else %}
+    <a class="bouton bouton--clair" href="{{ '/infos-alertes/' | relative_url }}#{{ ancre_alerte }}">Lire l'alerte</a>
+    {%- endif %}
+  </div>
+</div>
+{%- endif %}
+
+<section class="heros" style="--image-heros: url('{{ '/assets/images/mairie.jpg' | relative_url }}')" aria-labelledby="titre-accueil">
+  <div class="conteneur">
+    <div class="heros-contenu">
+      <img class="heros-logo" src="{{ '/assets/images/logo-massif-du-cezallier.png' | relative_url }}" alt="Massif du Cézallier" width="300" height="283">
+      <h1 id="titre-accueil">Bienvenue à <span class="nom-commune">Saint-Saturnin</span></h1>
+      <p>Un village de montagne du Cézallier, au cœur du Parc naturel régional des Volcans d'Auvergne, traversé par la Santoire et le Lemmet.</p>
+      <ul class="heros-chiffres" aria-label="Saint-Saturnin en chiffres">
+        <li><span class="heros-chiffre">186</span><span>habitants</span></li>
+        <li><span class="heros-chiffre">1 380 m</span><span>point culminant</span></li>
+        <li><span class="heros-chiffre">38,7 km²</span><span>de superficie</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<nav class="conteneur acces-rapides" aria-label="Accès rapides">
+  <ul>
+    <li><a href="{{ '/infos-alertes/' | relative_url }}"><span class="pastille pastille--alerte">{% include icone.html nom="alerte" %}</span>Infos &amp; Alertes</a></li>
+    <li><a href="{{ '/mairie/' | relative_url }}#contact"><span class="pastille">{% include icone.html nom="horloge" %}</span>Horaires et contact</a></li>
+    <li><a href="{{ '/conseil-municipal/' | relative_url }}"><span class="pastille">{% include icone.html nom="personnes" %}</span>Conseil municipal</a></li>
+    <li><a href="{{ '/vie-locale/' | relative_url }}#commerces"><span class="pastille">{% include icone.html nom="boutique" %}</span>Commerces</a></li>
+    <li><a href="{{ '/decouvrir/' | relative_url }}#patrimoine"><span class="pastille">{% include icone.html nom="eglise" %}</span>Patrimoine</a></li>
+  </ul>
+</nav>
+
+<section class="section" aria-labelledby="titre-infos">
+  <div class="conteneur accueil-infos">
+    <div>
+      <div class="section-entete">
+        <div>
+          <h2 id="titre-infos">Infos &amp; Alertes</h2>
+          <p>Les derniers avis de la mairie.</p>
+        </div>
+        <a class="lien-fleche" href="{{ '/infos-alertes/' | relative_url }}">Tous les avis{% include icone.html nom="fleche" %}</a>
+      </div>
+      <div class="liste-avis">
+        {%- for it in site.data.infos_alertes limit: 3 %}
+        {% include avis.html item=it compact=true %}
+        {%- endfor %}
+      </div>
+    </div>
+    <aside class="carte carte-mairie" aria-labelledby="titre-mairie">
+      <h3 id="titre-mairie">La mairie</h3>
+      <div class="coordonnees">
+        <p>{% include icone.html nom="lieu" %}<span>{{ m.adresse_ligne1 }}<br>{{ m.adresse_ligne2 }}</span></p>
+        <p>{% include icone.html nom="telephone" %}<a href="tel:{{ m.telephone_lien }}">{{ m.telephone }}</a></p>
+        <p>{% include icone.html nom="email" %}<a href="mailto:{{ m.email }}">{{ m.email | replace: "@", "@<wbr>" }}</a></p>
+      </div>
+      {% include horaires.html %}
+      <p class="note">Le secrétariat de mairie est ouvert au public le lundi, le mercredi et le vendredi.</p>
+      <a class="lien-fleche" href="{{ '/mairie/' | relative_url }}">La mairie et vos démarches{% include icone.html nom="fleche" %}</a>
+    </aside>
+  </div>
+</section>
+
+<section class="section section--teintee" aria-labelledby="titre-decouvrir">
+  <div class="conteneur">
+    <div class="section-entete">
+      <div>
+        <h2 id="titre-decouvrir">Découvrir Saint-Saturnin</h2>
+        <p>Une église du XII<sup>e</sup> siècle, deux châteaux et un viaduc sur la Santoire.</p>
+      </div>
+      <a class="lien-fleche" href="{{ '/decouvrir/' | relative_url }}">La commune et son patrimoine{% include icone.html nom="fleche" %}</a>
+    </div>
+    <div class="grille-cartes">
+      <article class="carte carte-article">
+        <div class="carte-article-corps">
+          <p class="surtitre">Monument historique</p>
+          <h3><a class="lien-etendu" href="{{ '/decouvrir/' | relative_url }}#eglise">L'église Saint-Saturnin</a></h3>
+          <p>Son chœur et son transept datent du XII<sup>e</sup> siècle, sa nef et son porche du XV<sup>e</sup>. Elle est inscrite aux monuments historiques depuis 1968.</p>
+        </div>
+      </article>
+      <article class="carte carte-article">
+        <div class="carte-article-corps">
+          <p class="surtitre">Monuments historiques</p>
+          <h3><a class="lien-etendu" href="{{ '/decouvrir/' | relative_url }}#chateaux">Les châteaux de Peyrelade et de Combes</a></h3>
+          <p>Une massive construction de pierre et un manoir rural du XVI<sup>e</sup> siècle, dont les façades et les toitures sont inscrites depuis 1949.</p>
+        </div>
+      </article>
+      <article class="carte carte-article">
+        <div class="carte-article-corps">
+          <p class="surtitre">Paysage</p>
+          <h3><a class="lien-etendu" href="{{ '/decouvrir/' | relative_url }}#viaduc">Le viaduc sur la Santoire</a></h3>
+          <p>Un viaduc courbe de dix arches, haut de 36 mètres, construit au début du XX<sup>e</sup> siècle : le vélorail du Cézallier y termine sa course.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="titre-elus">
+  <div class="conteneur">
+    <div class="section-entete">
+      <div>
+        <h2 id="titre-elus">Vos élus</h2>
+        <p>La maire et ses trois adjoints, élus en mars 2026.</p>
+      </div>
+      <a class="lien-fleche" href="{{ '/conseil-municipal/' | relative_url }}">Le conseil municipal{% include icone.html nom="fleche" %}</a>
+    </div>
+    {%- assign e = site.data.elus %}
+    <div class="grille-4">
+      <div class="panneau carte-elu">
+        <p class="fonction">{{ e.maire.fonction }}</p>
+        <p class="nom">{{ e.maire.nom }}</p>
+      </div>
+      {%- for a in e.adjoints %}
+      <div class="panneau carte-elu">
+        <p class="fonction">{{ a.fonction | replace: "1er", "1<sup>er</sup>" | replace: "2e", "2<sup>e</sup>" | replace: "3e", "3<sup>e</sup>" }}</p>
+        <p class="nom">{{ a.nom }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+    <p class="note">Pour joindre un élu, contactez la mairie au <a href="tel:{{ m.telephone_lien }}">{{ m.telephone }}</a>.</p>
+  </div>
+</section>

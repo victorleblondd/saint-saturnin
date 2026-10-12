@@ -1,0 +1,80 @@
+---
+title: "La mairie"
+permalink: /mairie/
+chapo: "Horaires, coordonnées de la mairie de Saint-Saturnin et aide pour vos démarches administratives."
+description: "Mairie de Saint-Saturnin : adresse, téléphone, courriel, horaires d'ouverture du secrétariat, démarches administratives et espaces France Services les plus proches."
+---
+{%- assign m = site.data.mairie -%}
+<section class="bloc" id="contact" aria-labelledby="titre-contact">
+  <h2 id="titre-contact" class="titre-decore">Nous contacter</h2>
+  <div class="grille-3">
+    <div class="panneau">
+      <h3>Coordonnées</h3>
+      <div class="coordonnees">
+        <p>{% include icone.html nom="lieu" %}<span>{{ m.nom }}<br>{{ m.adresse_ligne1 }}<br>{{ m.adresse_ligne2 }}</span></p>
+        <p>{% include icone.html nom="telephone" %}<a href="tel:{{ m.telephone_lien }}">{{ m.telephone }}</a></p>
+        <p>{% include icone.html nom="email" %}<a href="mailto:{{ m.email }}">{{ m.email | replace: "@", "@<wbr>" }}</a></p>
+        <p>{% include icone.html nom="externe" %}<a href="{{ m.facebook_url }}" rel="noopener">La page Facebook de la commune</a></p>
+      </div>
+    </div>
+    <div class="panneau">
+      <h3>Horaires d'ouverture</h3>
+      {% include horaires.html semaine_complete=true %}
+      <p class="note">Horaires du secrétariat de mairie, ouvert au public.</p>
+    </div>
+    <div class="panneau panneau--info">
+      <h3>Rencontrer vos élus</h3>
+      <p>Pour rencontrer la maire ou l'un des adjoints, adressez-vous au secrétariat de mairie, aux heures d'ouverture, au <a href="tel:{{ m.telephone_lien }}">{{ m.telephone }}</a>.</p>
+      <p><a class="lien-fleche" href="{{ '/conseil-municipal/' | relative_url }}">Le conseil municipal{% include icone.html nom="fleche" %}</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="bloc" id="demarches" aria-labelledby="titre-demarches">
+  <h2 id="titre-demarches" class="titre-decore">Vos démarches</h2>
+  <div class="grille-asymetrique">
+    <div>
+      <p>Le secrétariat de mairie vous renseigne sur vos démarches : état civil, inscription sur les listes électorales, urbanisme… Pensez à appeler avant de vous déplacer.</p>
+      <p>Toutes les démarches administratives, et la plupart des formulaires, sont en ligne sur <a href="https://www.service-public.gouv.fr/" rel="noopener">service-public.gouv.fr</a>, le site officiel de l'administration française.</p>
+    </div>
+    <div class="pile">
+      <div class="panneau">
+        <h3>France Services à Allanche</h3>
+        <p>Un accompagnement gratuit pour vos démarches administratives du quotidien.</p>
+        <div class="coordonnees">
+          <p>{% include icone.html nom="lieu" %}<span>1 place du Cézallier<br>15160 Allanche</span></p>
+          <p>{% include icone.html nom="telephone" %}<a href="tel:+33471204843">04 71 20 48 43</a></p>
+        </div>
+      </div>
+      <div class="panneau">
+        <h3>France Services à Condat</h3>
+        <p>Au bureau de poste de Condat.</p>
+        <div class="coordonnees">
+          <p>{% include icone.html nom="lieu" %}<span>1 place Marie-Aimée Méraville<br>15190 Condat</span></p>
+          <p>{% include icone.html nom="telephone" %}<a href="tel:+33471782584">04 71 78 25 84</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bloc" id="informations" aria-labelledby="titre-informations">
+  <h2 id="titre-informations" class="titre-decore">Rester informé</h2>
+  <div class="grille-3">
+    <div class="panneau">
+      <h3>Infos &amp; Alertes</h3>
+      <p>Les avis de la mairie : coupures, alertes, horaires des commerces, animations.</p>
+      <p><a class="lien-fleche" href="{{ '/infos-alertes/' | relative_url }}">Les derniers avis{% include icone.html nom="fleche" %}</a></p>
+    </div>
+    <div class="panneau">
+      <h3>Affichage légal</h3>
+      <p>Les décisions du conseil municipal et les arrêtés de la commune.</p>
+      <p><a class="lien-fleche" href="{{ '/affichage-legal/' | relative_url }}">Consulter l'affichage légal{% include icone.html nom="fleche" %}</a></p>
+    </div>
+    <div class="panneau">
+      <h3>Facebook</h3>
+      <p>Retrouvez aussi la commune sur sa page Facebook.</p>
+      <p><a class="lien-fleche" href="{{ m.facebook_url }}" rel="noopener">Saint-Saturnin sur Facebook{% include icone.html nom="externe" %}</a></p>
+    </div>
+  </div>
+</section>
